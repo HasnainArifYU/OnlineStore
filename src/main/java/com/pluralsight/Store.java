@@ -67,16 +67,20 @@ public class Store {
         for (Product item : inventory) {
             System.out.println(item.getId() + ") " + item.getName() + " - $" + item.getPrice());
         }
-        System.out.println("Enter the Product ID to add to cart, or 'back' to return:");
+        System.out.println("Enter the Product ID or Name to add to cart, or 'back' to return:");
+
         while (true) {
             String entry = scanner.nextLine();
             if ("back".equalsIgnoreCase(entry)) {
                 break;
             } else {
                 Product product = findProductById(entry, inventory);
+                if (product == null) {
+                    product = findProductByName(entry, inventory);
+                }
                 if (product != null) {
                     cart.add(product);
-                    System.out.println("Product added to cart. Add another or 'back' to return.");
+                    System.out.println("Product added to cart: " + product.getName() + ". Add another or 'back' to return.");
                 } else {
                     System.out.println("Product not found. Try again or 'back' to return");
                 }
@@ -132,11 +136,22 @@ public class Store {
         return null;
     }
 
-    public static double calculateTotal(ArrayList<Product> cart) {
-        double total = 0.0;
-        for (Product item : cart) {
-            total += item.getPrice();
+    public static Product findProductByName(String name, ArrayList<Product> inventory) {
+        for (Product item : inventory) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                return item;
+            }
         }
-        return total;
+        return null;
     }
-}
+
+
+            public static double calculateTotal (ArrayList < Product > cart) {
+                double total = 0.0;
+                for (Product item : cart) {
+                    total += item.getPrice();
+                }
+                return total;
+            }
+        }
+
