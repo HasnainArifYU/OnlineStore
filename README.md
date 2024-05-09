@@ -10,11 +10,17 @@ This Java application simulates a simple online store interface, allowing users 
 ## User Stories
 
 As a customer, I want to view a comprehensive list of all available products by selecting the "Show Products" option, so that I can browse and consider various items for purchase.
+
 As a customer, I wish to add a selected product to my shopping cart by entering its unique product ID, enabling me to compile a list of items I intend to buy.
+
 As a customer, I need the ability to review the contents of my shopping cart, including a total price, when I select the "Show Cart" option, to ensure that I am aware of what I have added and the total expenditure.
+
 As a customer, I want the flexibility to remove items from my shopping cart or to return to the products page to add more items, allowing me to adjust my final order before proceeding to checkout.
+
 As a customer, I desire to confirm my order and proceed with the checkout from my shopping cart, so that I can complete my purchase and receive confirmation of the transaction.
+
 As a customer, I require an option to exit the store through a user-friendly interface, ensuring that I can end my shopping session securely and whenever I choose.
+
 As a customer, I expect to receive clear and informative error messages if any issues occur (such as a product not being found or problems reading data from a file), so that I understand any issues and know how to navigate them effectively.
 
 
