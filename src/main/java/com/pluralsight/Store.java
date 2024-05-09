@@ -100,9 +100,9 @@ public class Store {
         }
         System.out.println("Total: $" + totalAmount);
 
-        System.out.println("Do you want to proceed to checkout? (Yes/No)");
+        System.out.println("Do you want to proceed to checkout? (Y/N)");
         String response = scanner.nextLine();
-        if ("Yes".equalsIgnoreCase(response)) {
+        if ("Y".equalsIgnoreCase(response)) {
             checkOut(cart, totalAmount, scanner);
         } else {
             System.out.println("Returning to the main menu.");
@@ -116,14 +116,15 @@ public class Store {
         }
 
         System.out.println("Proceeding to checkout...");
-        System.out.println("Do you want to confirm your purchase? (Yes/No)");
+        System.out.println("Do you want to confirm your purchase? (Y/N)");
         String confirmation = scanner.nextLine();
-        if ("Yes".equalsIgnoreCase(confirmation)) {
+        if ("Y".equalsIgnoreCase(confirmation)) {
+            System.out.println("===== TRANSACTION COMPLETE =====");
             System.out.println("Thank you for your purchase!");
             System.out.println("Total Amount: $" + totalAmount);
             cart.clear();
         } else {
-            System.out.println("Checkout canceled.");
+            System.out.println("CHECK OUT CANCELLED!");
         }
     }
 
@@ -146,12 +147,12 @@ public class Store {
     }
 
 
-            public static double calculateTotal (ArrayList < Product > cart) {
-                double total = 0.0;
-                for (Product item : cart) {
-                    total += item.getPrice();
-                }
-                return total;
+    public static double calculateTotal (ArrayList < Product > cart) {
+        double total = 0.0;
+        for (Product item : cart) {
+            total += item.getPrice();
+        }
+        return total;
             }
         }
 
